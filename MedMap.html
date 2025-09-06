@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MedMap - Healthcare Emergency Services</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>MedMap: Healthcare & Sanitation Navigator</h1>
+
+  <!-- Login / Signup -->
+  <div id="loginDiv" style="text-align:center;margin-top:50px;">
+    <h3>Login / Sign Up</h3>
+    <input type="email" id="email" placeholder="Email" /><br>
+    <input type="password" id="password" placeholder="Password" /><br>
+    <button id="loginBtn">Sign In</button>
+    <button id="signupBtn">Sign Up</button>
+  </div>
+
+  <!-- Map Section (hidden until login) -->
+  <div id="mapDiv" style="display:none;">
+    <div id="map"></div>
+    <div class="controls">
+      <button id="sosButton">🚨 Send SOS</button>
+      <button id="logoutBtn">Logout</button>
+
+      <div class="filters">
+        <label><input type="checkbox" class="filter" value="water" checked /> 💧 Water</label>
+        <label><input type="checkbox" class="filter" value="toilet" checked /> 🚻 Toilets</label>
+        <label><input type="checkbox" class="filter" value="changing" checked /> 👚 Changing Room</label>
+        <label><input type="checkbox" class="filter" value="breastfeeding" checked /> 🧷 Breastfeeding</label>
+        <label><input type="checkbox" class="filter" value="medical" checked /> 🏥 Medical</label>
+      </div>
+    </div>
+
+    <div id="sosHistoryContainer" style="margin-top:15px; max-width:900px; margin:auto;"></div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Firebase JS -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+</body>
+</html>
